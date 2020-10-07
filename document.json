@@ -4,7 +4,7 @@
     "stack_id":"contacts-app-stack",
     "platform": "kubernetes",
     "description": "",
-    "logo": "_images/SalesStack.png",
+    "logo": "_images/stack.png",
     "cover": "cover.md",
     "has_supporting_content": true,
     "meta": {
