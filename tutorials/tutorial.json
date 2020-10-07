@@ -1,0 +1,26 @@
+{
+   "name":"MVC Database Stack Tutorial",
+   "appLayout":"accordion",
+   "appTheme":"g90",
+   "footer":"footer.md",
+   "tutorials":[
+      {
+         "description":"The Stack comprises of a PostgreSQL DB , Backend and Frontend deployed as Microservices",
+         "duration":"30 min",
+         "tutorial_name":"contact-application-tutorial.md",
+         "title":"Contacts Application (React/NodeJS/PortgreSQL/Express)"
+      }
+   ],
+   "usefulLinks":[
+      {
+         "title":"Skaffold",
+         "description":"Skaffold handles the workflow for building, pushing and deploying your application, allowing you to focus on what matters most: writing code. ",
+         "url":"https://skaffold.dev/"
+      },
+      {
+         "title":"Crunchy PostgreSQL Operator",
+         "description":"Crunchy PostgresSQL Operator ",
+         "url":"https://operatorhub.io/operator/postgresql"
+      }
+   ]
+}

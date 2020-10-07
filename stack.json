@@ -1,0 +1,36 @@
+   {
+      "title":"Contacts Application Stack",
+      "description":"",
+      "document": "contacts-app-stack",
+      "logo":"_images/SalesStack.png",
+      "enabled":true,
+      "language":"NodeJS",
+      "stack_id" : "contacts-app-stack",
+      "type": "stack",
+      "categories": ["MVC", "PostgreSQL", "Express"],
+      "has_dataset": false,
+      "git_url": "https://github.com/Andi-Cirjaliu/edge-node-react-postgres-contacts-stack",
+      "git_commit": "b22c9090ccd375c162208d0b1f1bf41a7696190f",
+      "git_reponame": "edge-node-react-postgres-contacts-stack",
+      "packages":{
+         "frontend":{
+            "title":"Pattern",
+            "operators":[
+               "MVC"
+            ]
+         },
+         "database":{
+            "title":"Database",
+            "operators":[
+               "PostgreSQL"
+            ]
+         },
+         "backend":{
+            "title":"Backend",
+            "operators":[
+               "Express"
+            ]
+         }
+      },
+      "installTime":"10 minutes"
+   }
