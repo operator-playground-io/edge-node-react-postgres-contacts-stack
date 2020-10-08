@@ -71,7 +71,7 @@
       },
       {
          "description":"Initialize DB",
-         "exec":"cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql"
+         "exec":"cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt"
       },
       {
          "description":"Deploy Sample Application",
