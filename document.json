@@ -61,19 +61,19 @@
             "description": "Clone the Sample Application Code",
             "exec": "cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-react-postgres-contacts-deploy.git" 
         },        
-		{
+	{
             "description": "Replace .env with Backend IP and Port",
             "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy/frontend && export backend_port=30456 && sed -i \"s|ip|$ip_addr|\" .env && sed -i \"s|port|$backend_port|\" .env"
         },
-		{
-			"description": "Create contacts-db service and its port",
-            "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml		
-		},		
-		{
-			"description": "Initialize DB",
-            "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql"
-		},
-		{
+	{
+	    "description": "Create contacts-db service and its port",
+    "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml		
+	},		
+	{
+	    "description": "Initialize DB",
+    "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql"
+	},
+	{
             "description": "Deploy Sample Application",
             "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy&& skaffold config set default-repo localhost:5000 && skaffold run"
         }
