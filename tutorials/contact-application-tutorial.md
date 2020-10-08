@@ -32,21 +32,21 @@ Go to Developer Dashboard tab, it will provide you with the IDE along with the i
 k8s folder contains all the manifest files and defines the deployment stategy for the application.
 One can execute them using :
 
-​```execute
+```execute
 kubectl apply -f k8s/
-​```
+```
 
 In this example , we use `Skaffold` which simplifies local devlopment. You can deploy the application is DEV mode which keeps watching for the files changes and on any change, triggers the entire deployment process automatically without the user having to run and manage it manually.
 
 Navigate to the example:
 
-​```execute
+```execute
 cd /home/student/projects/edge-node-react-postgres-contacts-deploy
-​```
+```
 
-​```execute
+```execute
 skaffold dev
-​```
+```
 
 On exiting the command, Skaffold will automatically destroy all the resources it created with above command.
 
@@ -57,12 +57,12 @@ Also, you can use the `skaffold run` to deploy the changes onto kubernetes as a 
 
 You can delete all the application resources created by executing the following command:
 
-​```execute
+```execute
 kubectl delete -f k8s/
-​```
+```
 
 To delete the postgresql DB , execute the below command:
 
-​```execute
+```execute
 pgo delete cluster contacts
-​```
+```
