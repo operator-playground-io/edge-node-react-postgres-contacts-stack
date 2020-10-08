@@ -70,6 +70,10 @@
          "exec":"cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml"
       },
       {
+         "description":"Wait for Contacts DB to spin up ",
+         "exec":"until nc -z -v -w30 $ip_addr 30435; do echo \"Waiting for Contacts database connection...\"; sleep 5; done;"
+      },
+      {
          "description":"Initialize DB",
          "exec":"cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt"
       },
