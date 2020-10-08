@@ -1,91 +1,91 @@
 {
-    "name": "Contacts Application Stack",
-    "type": "stack",
-    "stack_id":"contacts-app-stack",
-    "platform": "kubernetes",
-    "description": "",
-    "logo": "_images/stack.png",
-    "cover": "cover.md",
-    "has_supporting_content": true,
-    "meta": {
-        "Language": [
-            "Node Js"
-        ],
-        "Backend": [
-            "Express (NodeJs)"
-        ],
-        "Frontend": [
-            "React"
-        ],
-        "Database": [
-            "PostgreSQL"
-        ],
-        "Install time": [
-            "10 minutes"
-        ]
-    },
-    "commands": [
-        {
-            "description": "Create Namespace",
-            "exec": "export PGO_OPERATOR_NAMESPACE=pgo && kubectl create namespace pgo"
-        },
-        {
-            "description": "Clone and Prepare ",
-            "exec": "git clone -b sample-app https://github.com/operator-playground/postgres-operator && cd postgres-operator && kubectl create -f postgre.yaml && kubectl create -f secret.yaml"
-        },
-		{
-            "description": "Get VM IP ",
-            "exec": "export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)"
-        },
-        {
-            "description": "Create an Service",
-            "exec": "curl -o service.yaml https://raw.githubusercontent.com/operator-playground/postgres-operator/sample-app/service.yaml && kubectl create -f service.yaml -n pgo"
-        },		
-		{
-            "description": "Wait for Postgres Operator to spin up ",
-            "exec": "until nc -z -v -w30 $ip_addr 32443; do echo \"Waiting for database connection...\"; sleep 5; done;"
-        },		
-        {
-            "description": "Install Client Credentials and Download the PGO Binary and Client Certificates",
-            "exec": "PGO_CMD=kubectl ./deploy/install-bootstrap-creds.sh && PGO_CMD=kubectl ./installers/kubectl/client-setup.sh"
-        },
-        {
-            "description": "Export PGO data that will be used for Cluster cration",
-            "exec": "export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pgo/pgouser && export PGO_CA_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_KEY=/home/student/.pgo/pgo/client.key"
-        },
-        {
-            "description": "Create PGO Cluster",
-            "exec": "export PGO_APISERVER_URL=https://127.0.0.1:32443 && pgo create cluster contacts --username pguser --password password -n pgo"
-        },
-        {
-            "description": "Clone the Sample Application Code",
-            "exec": "cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-react-postgres-contacts-deploy.git" 
-        },        
-	{
-            "description": "Replace .env with Backend IP and Port",
-            "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy/frontend && export backend_port=30456 && sed -i \"s|ip|$ip_addr|\" .env && sed -i \"s|port|$backend_port|\" .env"
-        },
-	{
-	    "description": "Create contacts-db service and its port",
-            "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml"		
-	},		
-	{
-	    "description": "Initialize DB",
-            "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql"
-	},
-	{
-            "description": "Deploy Sample Application",
-            "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy&& skaffold config set default-repo localhost:5000 && skaffold run"
-        }
-    ],
-    "content": [
-        "contact-application-tutorial.md"
-    ],
-    "display": [
-        {
-            "name": "Developer Dashboard",
-            "url": "##DNS.host##/codeserver",
-            "enabled": true
-        }
-    ]
+   "name":"Contacts Application Stack",
+   "type":"stack",
+   "stack_id":"contacts-app-stack",
+   "platform":"kubernetes",
+   "description":"",
+   "logo":"_images/stack.png",
+   "cover":"cover.md",
+   "has_supporting_content":true,
+   "meta":{
+      "Language":[
+         "Node Js"
+      ],
+      "Backend":[
+         "Express (NodeJs)"
+      ],
+      "Frontend":[
+         "React"
+      ],
+      "Database":[
+         "PostgreSQL"
+      ],
+      "Install time":[
+         "10 minutes"
+      ]
+   },
+   "commands":[
+      {
+         "description":"Create Namespace",
+         "exec":"export PGO_OPERATOR_NAMESPACE=pgo && kubectl create namespace pgo"
+      },
+      {
+         "description":"Clone and Prepare ",
+         "exec":"git clone -b sample-app https://github.com/operator-playground/postgres-operator && cd postgres-operator && kubectl create -f postgre.yaml && kubectl create -f secret.yaml"
+      },
+      {
+         "description":"Get VM IP ",
+         "exec":"export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)"
+      },
+      {
+         "description":"Create an Service",
+         "exec":"curl -o service.yaml https://raw.githubusercontent.com/operator-playground/postgres-operator/sample-app/service.yaml && kubectl create -f service.yaml -n pgo"
+      },
+      {
+         "description":"Wait for Postgres Operator to spin up ",
+         "exec":"until nc -z -v -w30 $ip_addr 32443; do echo \"Waiting for database connection...\"; sleep 5; done;"
+      },
+      {
+         "description":"Install Client Credentials and Download the PGO Binary and Client Certificates",
+         "exec":"PGO_CMD=kubectl ./deploy/install-bootstrap-creds.sh && PGO_CMD=kubectl ./installers/kubectl/client-setup.sh"
+      },
+      {
+         "description":"Export PGO data that will be used for Cluster cration",
+         "exec":"export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pgo/pgouser && export PGO_CA_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_KEY=/home/student/.pgo/pgo/client.key"
+      },
+      {
+         "description":"Create PGO Cluster",
+         "exec":"export PGO_APISERVER_URL=https://127.0.0.1:32443 && pgo create cluster contacts --username pguser --password password -n pgo"
+      },
+      {
+         "description":"Clone the Sample Application Code",
+         "exec":"cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-react-postgres-contacts-deploy.git"
+      },
+      {
+         "description":"Replace .env with Backend IP and Port",
+         "exec":"cd /home/student/projects/edge-node-react-postgres-contacts-deploy/frontend && export backend_port=30456 && sed -i \"s|ip|$ip_addr|\" .env && sed -i \"s|port|$backend_port|\" .env"
+      },
+      {
+         "description":"Create contacts-db service and its port",
+         "exec":"cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml"
+      },
+      {
+         "description":"Initialize DB",
+         "exec":"cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql"
+      },
+      {
+         "description":"Deploy Sample Application",
+         "exec":"cd /home/student/projects/edge-node-react-postgres-contacts-deploy&& skaffold config set default-repo localhost:5000 && skaffold run"
+      }
+   ],
+   "content":[
+      "contact-application-tutorial.md"
+   ],
+   "display":[
+      {
+         "name":"Developer Dashboard",
+         "url":"##DNS.host##/codeserver",
+         "enabled":true
+      }
+   ]
 }
