@@ -67,7 +67,7 @@
         },
 	{
 	    "description": "Create contacts-db service and its port",
-            "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml		
+            "exec":  "cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml"		
 	},		
 	{
 	    "description": "Initialize DB",
