@@ -64,5 +64,6 @@ kubectl delete -f k8s/
 To delete the postgresql DB , execute the below command:
 
 ```execute
+export PGO_APISERVER_URL=https://127.0.0.1:32443
 pgo delete cluster contacts
 ```
