@@ -53,7 +53,7 @@ On exiting the command, Skaffold will automatically destroy all the resources it
 
 Also, you can use the `skaffold run` to deploy the changes onto kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
 
-### Clean up the Kubernetes resouces
+### Clean up the Kubernetes resources
 
 You can delete all the application resources created by executing the following command:
 
