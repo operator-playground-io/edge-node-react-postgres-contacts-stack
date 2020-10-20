@@ -61,7 +61,7 @@ You can delete all the application resources created by executing the following 
 kubectl delete -f k8s/
 ```
 
-To delete the postgresql DB , execute the below command:
+To delete the postgresql DB , execute the below commands:
 
 ```execute
 cd /home/student/postgres-operator
