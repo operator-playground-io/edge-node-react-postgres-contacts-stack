@@ -64,6 +64,16 @@ kubectl delete -f k8s/
 To delete the postgresql DB , execute the below command:
 
 ```execute
+cd /home/student/postgres-operator
+export PGO_OPERATOR_NAMESPACE=pgo
+```
+```execute
+PGO_CMD=kubectl ./deploy/install-bootstrap-creds.sh && PGO_CMD=kubectl ./installers/kubectl/client-setup.sh
+```
+```execute
+export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pgo/pgouser && export PGO_CA_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_KEY=/home/student/.pgo/pgo/client.key
+```
+```execute
 export PGO_APISERVER_URL=https://127.0.0.1:32443
-pgo delete cluster contacts
+pgo delete cluster contacts -n pgo
 ```
