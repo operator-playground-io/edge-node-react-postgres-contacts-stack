@@ -1,12 +1,12 @@
 ```
 ---
-title: Contacts Application (React/NodeJS/PostgreSQL) Stack Tutorial
+title: Contacts Application (React/Node.js/PostgreSQL) Stack Tutorial
 description: The Stack comprises of a PostgreSQL , Backend and Frontend deployed as Microservices
 ---
 
 ### Introduction
 
-Contacts application comprises of a PostgreSQL database , backend and frontend which are deployed indepently as a microservice.
+Contacts application comprises of a PostgreSQL database , backend and frontend which are deployed independently as a microservice.
 The example also uses Skaffold which handles the workflow for building, pushing and deploying your application, allowing you to focus on what matters most: writing code.
 
 ### Access the application
@@ -29,7 +29,7 @@ It follows a simple modular and MVC pattern. There are 3 folders that are of our
 
 Go to Developer Dashboard tab, it will provide you with the IDE along with the integrated terminal.  Click on the bottom status bar and select `TERMINAL`. 
 
-k8s folder contains all the manifest files and defines the deployment stategy for the application.
+k8s folder contains all the manifest files and defines the deployment strategy for the application.
 One can execute them using :
 
 ```execute
@@ -51,7 +51,7 @@ skaffold dev
 On exiting the command, Skaffold will automatically destroy all the resources it created with above command.
 
 
-Also, you can use the `skaffold run` to deploy the changes onto kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
+Also, you can use the `skaffold run` to deploy the changes onto Kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
 
 ### Clean up the Kubernetes resources
 
@@ -61,7 +61,7 @@ You can delete all the application resources created by executing the following 
 kubectl delete -f k8s/
 ```
 
-To delete the postgresql DB , execute the below commands:
+To delete the PostgreSQL DB , execute the below command:
 
 ```execute
 cd /home/student/postgres-operator

@@ -9,10 +9,10 @@
    "has_supporting_content":true,
    "meta":{
       "Language":[
-         "Node Js"
+         "Node.js"
       ],
       "Backend":[
-         "Express (NodeJs)"
+         "Express (Node.js)"
       ],
       "Frontend":[
          "React"

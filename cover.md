@@ -1,6 +1,6 @@
 ### Description
 
-Contacts application is based on MEAN stack and provides an good starter to build a 3 tier microservice application and deploy them on any platforms like Kubernetes and OpenShift. The application consists of an **Database** , **React based Frontend** and **Express using NodeJS** backend.
+Contacts application is based on MEAN stack and provides an good starter to build a 3 tier microservice application and deploy them on any platforms like Kubernetes and OpenShift. The application consists of an **Database** , **React based Frontend** and **Express using Node.js** backend.
 
 ### Architecture
 

@@ -8,7 +8,7 @@
          "description":"The Stack comprises of a PostgreSQL DB , Backend and Frontend deployed as Microservices",
          "duration":"30 min",
          "tutorial_name":"contact-application-tutorial.md",
-         "title":"Contacts Application (React/NodeJS/PortgreSQL/Express)"
+         "title":"Contacts Application (React/Node.js/PostgreSQL/Express)"
       }
    ],
    "usefulLinks":[
