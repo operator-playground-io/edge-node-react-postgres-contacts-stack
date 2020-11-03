@@ -8,8 +8,8 @@
    "cover":"cover.md",
    "has_supporting_content":true,
    "meta":{
-      "Language":[
-         "Node.js"
+      "Type":[
+         "Operator"
       ],
       "Backend":[
          "Express (Node.js)"
